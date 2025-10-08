@@ -194,5 +194,7 @@ app.get('*', (req, res) => {
 
 // Iniciar servidor
 app.listen(port, () => {
-  console.log(`Servidor backend ejecutándose en http://localhost:${port}`);
+  console.log(`Servidor corriendo en el puerto ${port}`);
 });
+
+
