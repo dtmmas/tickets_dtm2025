@@ -12,10 +12,10 @@ app.use(bodyParser.json());
 
 // Configuración de la conexión a MySQL
 const db = mysql.createConnection({
-  host: '82.197.82.156',
-  user: 'u497317539_tickets',     // El usuario que creaste
-  password: '051986Ad+', // La contraseña que estableciste
-  database: 'u497317539_tickets'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 // Conectar a MySQL
