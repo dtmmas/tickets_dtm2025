@@ -12,10 +12,10 @@ app.use(bodyParser.json());
 
 // Configuración de la conexión a MySQL
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',     // El usuario que creaste
-  password: 'huberto051986', // La contraseña que estableciste
-  database: 'ticket_system'
+  host: '82.197.82.156',
+  user: 'u497317539_tickets',     // El usuario que creaste
+  password: '051986Ad+', // La contraseña que estableciste
+  database: 'u497317539_tickets'
 });
 
 // Conectar a MySQL
