@@ -192,7 +192,26 @@ app.delete('/api/tickets/:id', (req, res) => {
 //  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 //});
 
+ Ruta raíz para evitar "Cannot GET /"
+app.get('/', (req, res) => {
+  res.json({
+    message: 'API de Sistema de Tickets funcionando',
+    endpoints: {
+      tickets: '/api/tickets',
+      health: '/health'
+    }
+  });
+});
 
+// Ruta de health check
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() });
+});
+
+// Iniciar servidor
+app.listen(port, () => {
+  console.log(`Servidor corriendo en el puerto ${port}`);
+});
 
 // Iniciar servidor
 app.listen(port, () => {
