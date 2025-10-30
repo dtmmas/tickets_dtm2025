@@ -8,7 +8,9 @@ import TicketDialog from './components/TicketDialog';
 import { AppBar, Toolbar, Typography, Container, Paper, CircularProgress, Snackbar, Alert } from '@mui/material';
 
 // API URL
-const API_URL = 'http://localhost:3001/api';
+//const API_URL = 'http://localhost:3001/api';
+
+const API_URL = 'https://tickets-dtm2025.onrender.com/api';
 
 // Estados de tickets disponibles
 const estadosTicket = ['pendiente', 'resuelto', 'cancelado'];
