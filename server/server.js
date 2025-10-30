@@ -184,15 +184,14 @@ app.delete('/api/tickets/:id', (req, res) => {
   });
 });
 
-
 // --- Servir React build (producción) ---
-//app.use(express.static(path.join(__dirname, '../client/build')));
+// app.use(express.static(path.join(__dirname, '../client/build')));
+// 
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+// });
 
-//app.get('*', (req, res) => {
-//  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-//});
-
- Ruta raíz para evitar "Cannot GET /"
+// Ruta raíz para evitar "Cannot GET /"
 app.get('/', (req, res) => {
   res.json({
     message: 'API de Sistema de Tickets funcionando',
@@ -208,14 +207,8 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-// Iniciar servidor
+// Iniciar servidor (SOLO UNA VEZ)
 app.listen(port, () => {
   console.log(`Servidor corriendo en el puerto ${port}`);
 });
-
-// Iniciar servidor
-app.listen(port, () => {
-  console.log(`Servidor corriendo en el puerto ${port}`);
-});
-
 
